@@ -1,11 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Application Tracker</title>
+    <link rel="shortcut icon" href="./images/magnifying-glass-dollar-solid-full.svg" type="image/x-icon">
+    <!-- daisyUI link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- fontawesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- googlefont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- css style -->
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+
 </head>
-<body>
-    
+
+<body class="w-full bg-base-200 min-h-screen">
+    <!-- header section start -->
+    <header class="w-10/12 mx-auto pt-8">
+        <h1 class="font-bold mb-5 text-3xl">Job Application Tracker</h1>
+        <!-- dashboard card container -->
+        <div class="header-card-container grid grid-cols-3 gap-6 ">
+            <!-- total card -->
+            <div class="card bg-base-100  shadow-sm">
+                <div class="card-body">
+                    <h2 class="font-medium">Total</h2>
+                    <p id="total-number" class="text-neutral-950 text-xl font-bold">8</p>
+                </div>
+            </div>
+
+            <!-- interview card -->
+            <div class="card bg-base-100  shadow-sm">
+                <div class="card-body">
+                    <h2 class="font-medium">Interview</h2>
+                    <p id="interview-number" class="text-green-600 text-xl font-bold">0</p>
+                </div>
+            </div>
+
+            <!-- rejected card -->
+            <div class="card bg-base-100  shadow-sm">
+                <div class="card-body">
+                    <h2 class="font-medium">Rejected</h2>
+                    <p id="reject-number" class="text-red-600 text-xl font-bold">0</p>
+                </div>
+            </div>
+        </div>
+        <!-- dashboard card container end -->
+        <div class="divider divider-neutral/50"></div>
+    </header>
+    <!-- header section end -->
+
+
+    <!-- available job section start -->
+    <section class="available-jobs-section w-10/12 mx-auto">
+        <div class="flex justify-between">
+            <h2 class="font-semibold text-xl text-neutral-950">Available Jobs</h2>
+            <p class="text-neutral/50">8 jobs</p>
+        </div>
+    </section>
+    <!-- available job section end -->
+
+    <!--  tab button section start -->
+    <section class="tabs- container w-10/12 mx-auto pt-8 flex gap-5">
+        <!-- all tab -->
+        <div>
+            <button class="btn text-neutral/50 ">All</button>
+        </div>
+        <!-- interview tab -->
+        <div>
+            <button class="btn text-neutral/50">Interview</button>
+        </div>
+
+        <!-- rejected tab -->
+        <div>
+            <button class="btn text-neutral/50">Rejected</button>
+        </div>
+    </section>
+    <!--  tab button section end -->
+
+    <!-- card section start -->
+    <section class="card-container w-10/12 mx-auto pt-8 space-y-5">
+        <!-- card1 mobile -->
+            <div class="card bg-base-100 card-xl shadow-sm border-l-4 border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div class="card-body space-y-2">
+                    <h2 class="card-title">Mobile First Corp</h2>
+                    <p class="text-neutral/50">React Native Developer</p>
+                    <p class="text-neutral/50">Remote  • Full-time • $130,000 - $175,000</p>
+                    <div>
+                        <button class="btn bg-gray-300">Not Applied</button>
+                    </div>
+                    <p>Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    <div class="card-actions">
+                        <button class="btn btn-success btn-outline">INTERVIEW</button>
+                         <button class="btn btn-error btn-outline">REJECTED</button>
+                    </div>
+                </div>
+            </div>
+            <!-- card1 end -->
+
+            <!-- card2 webflow -->
+               <div class="card bg-base-100 card-xl shadow-sm border-l-4 border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div class="card-body space-y-2">
+                    <h2 class="card-title">WebFlow Agency</h2>
+                    <p class="text-neutral/50">Web Designer & Developer</p>
+                    <p class="text-neutral/50">Los Angeles, CA  • Part-time • $80,000 - $120,000</p>
+                    <div>
+                        <button class="btn bg-gray-300">Not Applied</button>
+                    </div>
+                    <p>Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+                    <div class="card-actions">
+                        <button class="btn btn-success btn-outline">INTERVIEW</button>
+                         <button class="btn btn-error btn-outline">REJECTED</button>
+                    </div>
+                </div>
+            </div>
+             <!-- card2 end -->
+
+            <!-- card3 dataviz -->
+               <div class="card bg-base-100 card-xl shadow-sm border-l-4 border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div class="card-body space-y-2">
+                    <h2 class="card-title">DataViz Solutions</h2>
+                    <p class="text-neutral/50">Data Visualization Specialist</p>
+                    <p class="text-neutral/50">Remote  • Full-time • $125,000 - $165,000</p>
+                    <div>
+                        <button class="btn bg-gray-300">Not Applied</button>
+                    </div>
+                    <p>Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
+                    <div class="card-actions">
+                        <button class="btn btn-success btn-outline">INTERVIEW</button>
+                         <button class="btn btn-error btn-outline">REJECTED</button>
+                    </div>
+                </div>
+            </div>
+             <!-- card3 end -->
+
+            <!-- card4 cloudfirst -->
+               <div class="card bg-base-100 card-xl shadow-sm border-l-4 border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div class="card-body space-y-2">
+                    <h2 class="card-title">CloudFirst Inc</h2>
+                    <p class="text-neutral/50">Backend Developer</p>
+                    <p class="text-neutral/50">Seattle, WA  • Full-time • $140,000 - $190,000</p>
+                    <div>
+                        <button class="btn bg-gray-300">Not Applied</button>
+                    </div>
+                    <p>Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
+                    <div class="card-actions">
+                        <button class="btn btn-success btn-outline">INTERVIEW</button>
+                         <button class="btn btn-error btn-outline">REJECTED</button>
+                    </div>
+                </div>
+            </div>
+             <!-- card4 end -->
+              <!-- card5 Innovation -->
+               <div class="card bg-base-100 card-xl shadow-sm border-l-4 border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div class="card-body space-y-2">
+                    <h2 class="card-title">Innovation Labs</h2>
+                    <p class="text-neutral/50">UI/UX Engineer</p>
+                    <p class="text-neutral/50">Austin, TX  • Full-time • $110,000 - $150,000</p>
+                    <div>
+                        <button class="btn bg-gray-300">Not Applied</button>
+                    </div>
+                    <p>Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
+                    <div class="card-actions">
+                        <button class="btn btn-success btn-outline">INTERVIEW</button>
+                         <button class="btn btn-error btn-outline">REJECTED</button>
+                    </div>
+                </div>
+            </div>
+             <!-- card5 end -->
+              <!-- card6 MegaCorp -->
+               <div class="card bg-base-100 card-xl shadow-sm border-l-4 border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div class="card-body space-y-2">
+                    <h2 class="card-title">MegaCorp Solutions</h2>
+                    <p class="text-neutral/50">JavaScript Developer</p>
+                    <p class="text-neutral/50">New York, NY • Full-time • $130,000 - $170,00</p>
+                    <div>
+                        <button class="btn bg-gray-300">Not Applied</button>
+                    </div>
+                    <p>Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
+                    <div class="card-actions">
+                        <button class="btn btn-success btn-outline">INTERVIEW</button>
+                         <button class="btn btn-error btn-outline">REJECTED</button>
+                    </div>
+                </div>
+            </div>
+             <!-- card6 end -->
+              <!-- card7 StartupXYZ -->
+               <div class="card bg-base-100 card-xl shadow-sm border-l-4 border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div class="card-body space-y-2">
+                    <h2 class="card-title">Mobile First Corp</h2>
+                    <p class="text-neutral/50">React Native Developer</p>
+                    <p class="text-neutral/50">Remote  • Full-time • $130,000 - $175,000</p>
+                    <div>
+                        <button class="btn bg-gray-300">Not Applied</button>
+                    </div>
+                    <p>Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    <div class="card-actions">
+                        <button class="btn btn-success btn-outline">INTERVIEW</button>
+                         <button class="btn btn-error btn-outline">REJECTED</button>
+                    </div>
+                </div>
+            </div>
+             <!-- card7 end -->
+              <!-- card8 TechCorp -->
+               <div class="card bg-base-100 card-xl shadow-sm border-l-4 border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div class="card-body space-y-2">
+                    <h2 class="card-title">Mobile First Corp</h2>
+                    <p class="text-neutral/50">React Native Developer</p>
+                    <p class="text-neutral/50">Remote  • Full-time • $130,000 - $175,000</p>
+                    <div>
+                        <button class="btn bg-gray-300">Not Applied</button>
+                    </div>
+                    <p>Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    <div class="card-actions">
+                        <button class="btn btn-success btn-outline">INTERVIEW</button>
+                         <button class="btn btn-error btn-outline">REJECTED</button>
+                    </div>
+                </div>
+            </div>
+             <!-- card8 end -->
+    </section>
+    <!-- card section end -->
+
+
+
+
+
 </body>
+
 </html>
