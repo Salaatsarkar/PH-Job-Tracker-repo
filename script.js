@@ -28,11 +28,10 @@ function toggleTab(tab) {
     if (tab === 'all') {
         allContainer.classList.remove('hidden');
     }
-    else if(tab === 'interview')
-    {
+    else if (tab === 'interview') {
         interviewContainer.classList.remove('hidden');
     }
-    else{
+    else {
         rejectedContainer.classList.remove('hidden');
     }
 
@@ -47,34 +46,36 @@ const totalNumber = findId('total-number');
 const interviewNumber = findId('interview-number');
 const rejectNumber = findId('reject-number');
 
-totalNumber.innerText = allContainer.children.length;
-interviewNumber.innerText = interviewContainer.children.length;
-rejectNumber.innerText = rejectedContainer.children.length;
+
 
 //card's 3 button work 
-document.getElementById('parent-container').addEventListener('click',function(event){
+document.getElementById('parent-container').addEventListener('click', function (event) {
     const clickEventElement = event.target;
     const card = clickEventElement.closest(".card");
     const parent = card.parentNode;
     const changeStatus = card.querySelector(".change-status");
 
-    if(clickEventElement.classList.contains("interview"))
-    {
+    if (clickEventElement.classList.contains("interview")) {
         changeStatus.innerText = "Interviewed";
         interviewContainer.appendChild(card);
+        changeDashboard();
     }
-    if(clickEventElement.classList.contains("reject"))
-    {
+    if (clickEventElement.classList.contains("reject")) {
         changeStatus.innerText = "Rejected";
         rejectedContainer.appendChild(card);
+        changeDashboard();
     }
-    if(clickEventElement.classList.contains("delete"))
-    {
+    if (clickEventElement.classList.contains("delete")) {
         parent.removeChild(card);
+        changeDashboard();
     }
 
 })
 
+function changeDashboard() {
+    totalNumber.innerText = allContainer.children.length;
+    interviewNumber.innerText = interviewContainer.children.length;
+    rejectNumber.innerText = rejectedContainer.children.length;
+}
 
-
-
+changeDashboard();
