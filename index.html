@@ -76,16 +76,16 @@
     <section class="tabs- container w-10/12 mx-auto pt-8 flex gap-5">
         <!-- all tab -->
         <div>
-            <button class="btn text-neutral/50 ">All</button>
+            <button id="tab-all" onclick="toggleTab('all')" class="btn text-neutral/50">All</button>
         </div>
         <!-- interview tab -->
         <div>
-            <button class="btn text-neutral/50">Interview</button>
+            <button id="tab-interview" onclick="toggleTab('interview')" class="btn text-neutral/50">Interview</button>
         </div>
 
         <!-- rejected tab -->
         <div>
-            <button class="btn text-neutral/50">Rejected</button>
+            <button id="tab-rejected" onclick="toggleTab('rejected')" class="btn text-neutral/50">Rejected</button>
         </div>
     </section>
     <!--  tab button section end -->
@@ -234,9 +234,26 @@
     </section>
     <!-- card section end -->
 
+    <!-- empty section start -->
+     <section class="empty-section w-10/12 mx-auto pt-8 hidden">
+          <div class="card bg-base-100 card-xl shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div class="card-body space-y-2 items-center">
+                    <div>
+                        <img src="./images/jobs.png" alt="">
+                    </div>
+                    <h2 class="card-title">No jobs available</h2>
+                    <p class="text-neutral/50">Check back soon for new job opportunities</p> 
+                </div>
+            </div>
+     </section>
 
 
 
+    <!-- empty section end -->
+
+
+
+     <script src="./script.js"></script>
 
 </body>
 
