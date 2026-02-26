@@ -52,6 +52,8 @@ interviewNumber.innerText = interviewContainer.children.length;
 rejectNumber.innerText = rejectedContainer.children.length;
 
 //card's 3 button work 
-
+document.getElementById('parent-container').addEventListener('click',function(event){
+    const clcikEventElement = event.target;
+})
 
 
