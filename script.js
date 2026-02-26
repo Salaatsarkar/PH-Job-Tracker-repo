@@ -53,7 +53,28 @@ rejectNumber.innerText = rejectedContainer.children.length;
 
 //card's 3 button work 
 document.getElementById('parent-container').addEventListener('click',function(event){
-    const clcikEventElement = event.target;
+    const clickEventElement = event.target;
+    const card = clickEventElement.closest(".card");
+    const parent = card.parentNode;
+    const changeStatus = card.querySelector(".change-status");
+
+    if(clickEventElement.classList.contains("interview"))
+    {
+        changeStatus.innerText = "Interviewed";
+        interviewContainer.appendChild(card);
+    }
+    if(clickEventElement.classList.contains("reject"))
+    {
+        changeStatus.innerText = "Rejected";
+        rejectedContainer.appendChild(card);
+    }
+    if(clickEventElement.classList.contains("delete"))
+    {
+        parent.removeChild(card);
+    }
+
 })
+
+
 
 
