@@ -22,12 +22,14 @@
     <style>
         * {
             font-family: "Geist", sans-serif;
+            
+            
         }
     </style>
 
 </head>
 
-<body class="w-full bg-base-200 min-h-screen">
+<body class="w-full bg-base-200 min-h-screen ">
     <!-- header section start -->
     <header class="w-10/12 mx-auto pt-8">
         <h1 class="font-bold mb-5 text-3xl">Job Application Tracker</h1>
@@ -67,7 +69,7 @@
     <section class="available-jobs-section w-10/12 mx-auto">
         <div class="flex justify-between">
             <h2 class="font-semibold text-xl text-neutral-950">Available Jobs</h2>
-            <p id="jobs-count" class="text-neutral/50">8 jobs</p>
+            <p class="text-neutral/50"> <span id="jobs-count">0</span> jobs</p>
         </div>
     </section>
     <!-- available job section end -->
@@ -98,7 +100,7 @@
     <section id="all-container" class="card-container w-10/12 mx-auto pt-8 space-y-5 hidden">
         <!-- card1 mobile -->
         <div
-            class="card bg-base-100 card-xl shadow-sm border-l-4 border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            class="card bg-base-100 card-xl shadow-sm border-l-4 border-blue-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
             <div class="card-body space-y-2">
                 <!-- trash div start -->
                 <div class="flex justify-between">
@@ -108,7 +110,7 @@
                     </div>
                     <div
                         class="delete border-1 border-gray-400 rounded-full w-12 h-12 flex justify-center items-center bg-base-200">
-                        <img class="w-5 h-5" src="./images/trash-can-regular-full.svg" alt="">
+                        <img class="w-5 h-5 pointer-events-none" src="./images/trash-can-regular-full.svg" alt="">
                     </div>
                 </div>
 
@@ -130,7 +132,7 @@
 
         <!-- card2 webflow -->
         <div
-            class="card bg-base-100 card-xl shadow-sm border-l-4 border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            class="card bg-base-100 card-xl shadow-sm border-l-4 border-blue-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
             <div class="card-body space-y-2">
                 <!-- trash div start -->
                 <div class="flex justify-between">
@@ -140,7 +142,7 @@
                     </div>
                     <div
                         class=" delete border-1 border-gray-400 rounded-full w-12 h-12 flex justify-center items-center bg-base-200">
-                        <img class="w-5 h-5" src="./images/trash-can-regular-full.svg" alt="">
+                        <img class="w-5 h-5 pointer-events-none" src="./images/trash-can-regular-full.svg" alt="">
                     </div>
                 </div>
                 <!-- trash div end -->
@@ -160,7 +162,7 @@
 
         <!-- card3 dataviz -->
         <div
-            class="card bg-base-100 card-xl shadow-sm border-l-4 border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            class="card bg-base-100 card-xl shadow-sm border-l-4 border-blue-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
             <div class="card-body space-y-2">
                 <!-- trash div start -->
                 <div class="flex justify-between">
@@ -170,7 +172,7 @@
                     </div>
                     <div
                         class=" delete border-1 border-gray-400 rounded-full w-12 h-12 flex justify-center items-center bg-base-200">
-                        <img class="w-5 h-5" src="./images/trash-can-regular-full.svg" alt="">
+                        <img class="w-5 h-5 pointer-events-none" src="./images/trash-can-regular-full.svg" alt="">
                     </div>
                 </div>
                 <!-- trash div end -->
@@ -191,7 +193,7 @@
 
         <!-- card4 cloudfirst -->
         <div
-            class="card bg-base-100 card-xl shadow-sm border-l-4 border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            class="card bg-base-100 card-xl shadow-sm border-l-4 border-blue-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
             <div class="card-body space-y-2">
                 <!-- trash div start -->
                 <div class="flex justify-between">
@@ -201,7 +203,7 @@
                     </div>
                     <div
                         class="delete border-1 border-gray-400 rounded-full w-12 h-12 flex justify-center items-center bg-base-200">
-                        <img class="w-5 h-5" src="./images/trash-can-regular-full.svg" alt="">
+                        <img class="w-5 h-5 pointer-events-none" src="./images/trash-can-regular-full.svg" alt="">
                     </div>
                 </div>
                 <!-- trash div end -->
@@ -222,7 +224,7 @@
         <!-- card4 end -->
         <!-- card5 Innovation -->
         <div
-            class="card bg-base-100 card-xl shadow-sm border-l-4 border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            class="card bg-base-100 card-xl shadow-sm border-l-4  border-blue-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
             <div class="card-body space-y-2">
                 <!-- trash div start -->
                 <div class="flex justify-between">
@@ -232,7 +234,7 @@
                     </div>
                     <div
                         class=" delete border-1 border-gray-400 rounded-full w-12 h-12 flex justify-center items-center bg-base-200">
-                        <img class="w-5 h-5" src="./images/trash-can-regular-full.svg" alt="">
+                        <img class="w-5 h-5 pointer-events-none" src="./images/trash-can-regular-full.svg" alt="">
                     </div>
                 </div>
                 <!-- trash div end -->
@@ -252,7 +254,7 @@
         <!-- card5 end -->
         <!-- card6 MegaCorp -->
         <div
-            class="card bg-base-100 card-xl shadow-sm border-l-4 border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            class="card bg-base-100 card-xl shadow-sm border-l-4  border-blue-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
             <div class="card-body space-y-2">
                 <!-- trash div start -->
                 <div class="flex justify-between">
@@ -262,7 +264,7 @@
                     </div>
                     <div
                         class="delete border-1 border-gray-400 rounded-full w-12 h-12 flex justify-center items-center bg-base-200">
-                        <img class="w-5 h-5" src="./images/trash-can-regular-full.svg" alt="">
+                        <img class="w-5 h-5 pointer-events-none" src="./images/trash-can-regular-full.svg" alt="">
                     </div>
                 </div>
                 <!-- trash div end -->
@@ -282,7 +284,7 @@
         <!-- card6 end -->
         <!-- card7 StartupXYZ -->
         <div
-            class="card bg-base-100 card-xl shadow-sm border-l-4 border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            class="card bg-base-100 card-xl shadow-sm border-l-4  border-blue-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
             <div class="card-body space-y-2">
                 <!-- trash div start -->
                 <div class="flex justify-between">
@@ -292,7 +294,7 @@
                     </div>
                     <div
                         class="delete border-1 border-gray-400 rounded-full w-12 h-12 flex justify-center items-center bg-base-200">
-                        <img class="w-5 h-5" src="./images/trash-can-regular-full.svg" alt="">
+                        <img class="w-5 h-5 pointer-events-none" src="./images/trash-can-regular-full.svg" alt="">
                     </div>
                 </div>
                 <!-- trash div end -->
@@ -312,7 +314,7 @@
         <!-- card7 end -->
         <!-- card8 TechCorp -->
         <div
-            class="card bg-base-100 card-xl shadow-sm border-l-4 border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            class="card bg-base-100 card-xl shadow-sm border-l-4  border-blue-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
             <div class="card-body space-y-2">
                 <!-- trash div start -->
                 <div class="flex justify-between">
@@ -322,7 +324,7 @@
                     </div>
                     <div
                         class=" delete border-1 border-gray-400 rounded-full w-12 h-12 flex justify-center items-center bg-base-200">
-                        <img class="w-5 h-5" src="./images/trash-can-regular-full.svg" alt="">
+                        <img class="w-5 h-5 pointer-events-none" src="./images/trash-can-regular-full.svg" alt="">
                     </div>
                 </div>
                 <!-- trash div end -->

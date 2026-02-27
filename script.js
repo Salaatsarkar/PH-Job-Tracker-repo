@@ -1,3 +1,5 @@
+let currentTab = "all";
+
 const tabActive = ["bg-blue-600", "text-white"];
 const tabInactive = ["bg-transparent", "text-neutral/50"];
 
@@ -6,12 +8,19 @@ const interviewContainer = findId('interview-container');
 const rejectedContainer = findId('rejected-container');
 const emptyContainer = findId('empty-container');
 const jobsCount = findId('jobs-count');
+//dashboard number 
+const totalNumber = findId('total-number');
+const interviewNumber = findId('interview-number');
+const rejectNumber = findId('reject-number');
+
 
 function toggleTab(tab) {
+    
     const tabs = ["all", "interview", "rejected"];
     currentTab = tab;
 
     for (const button of tabs) {
+
         const tabName = document.getElementById("tab-" + button);
         if (button === tab) {
             tabName.classList.remove(...tabInactive);
@@ -22,13 +31,14 @@ function toggleTab(tab) {
             tabName.classList.add(...tabInactive);
         }
     }
+    
+    emptyContainer.classList.add("hidden");
+
     //add hidden class in clickable section
     const sections = [allContainer, interviewContainer, rejectedContainer];
     for (const section of sections) {
         section.classList.add('hidden');
     }
-
-    // emptyContainer.classList.add("hidden");
 
     //remove clikable sections hidden class
     if (tab === 'all') {
@@ -52,16 +62,6 @@ function toggleTab(tab) {
     changeDashboard();
 }
 
-let currentTab = "all";
-toggleTab(currentTab);
-
-//dashboard number update
-
-const totalNumber = findId('total-number');
-const interviewNumber = findId('interview-number');
-const rejectNumber = findId('reject-number');
-
-
 
 //card's 3 button work 
 document.getElementById('parent-container').addEventListener('click', function (event) {
@@ -69,27 +69,29 @@ document.getElementById('parent-container').addEventListener('click', function (
     const card = clickEventElement.closest(".card");
     const parent = card.parentNode;
     const changeStatus = card.querySelector(".change-status");
+    
 
     if (clickEventElement.classList.contains("interview")) {
+        changeStatus.style.backgroundColor = "lightgreen";
         changeStatus.innerText = "Interviewed";
         interviewContainer.appendChild(card);
+       card.style.borderLeft = "4px solid lightgreen";
     }
     if (clickEventElement.classList.contains("reject")) {
+        changeStatus.style.backgroundColor = "lightcoral";
         changeStatus.innerText = "Rejected";
         rejectedContainer.appendChild(card);
+        card.style.borderLeft = "4px solid lightcoral";
+       
     }
     if (clickEventElement.classList.contains("delete")) {
         parent.removeChild(card);
+        
     }
-
     changeDashboard();
-
 })
 
 function changeDashboard() {
-    // totalNumber.innerText = allContainer.children.length;
-    // interviewNumber.innerText = interviewContainer.children.length;
-    // rejectNumber.innerText = rejectedContainer.children.length;
 
     const countObject = {
         all: allContainer.children.length,
@@ -102,12 +104,15 @@ function changeDashboard() {
     rejectNumber.innerText = countObject.rejected;
 
     jobsCount.innerText = countObject[currentTab];
+
     if(countObject[currentTab] < 1){
         emptyContainer.classList.remove("hidden");
     }
     else{
         emptyContainer.classList.add("hidden");
     }
+    
 }
-
 changeDashboard();
+toggleTab(currentTab);
+
