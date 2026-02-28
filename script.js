@@ -73,7 +73,7 @@ document.getElementById('parent-container').addEventListener('click', function (
 
     if (clickEventElement.classList.contains("interview")) {
         changeStatus.style.backgroundColor = "lightgreen";
-        changeStatus.innerText = "Interviewed";
+        changeStatus.innerText = "Interview";
         interviewContainer.appendChild(card);
        card.style.borderLeft = "4px solid lightgreen";
     }
